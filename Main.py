@@ -22,8 +22,14 @@ class Library:
          name = input("Please enter your name : ")
          self.lent_list[lent_book] = name
 
+         print("\n*************************************************************")
+         print("Thank You for lending.. please return the book within a week.")
+         print("*************************************************************")
+
       else :
+         print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
          print("Sorry we don't have such book")
+         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 
    def retn(self):
@@ -32,12 +38,23 @@ class Library:
       if ret_book in self.lent_list:
          del self.lent_list[ret_book]
          self.book_list.append(ret_book)
+
+         print("\n*************************")
+         print("Thank You for returning..")
+         print("*************************")
+
       else:
+         print("\n!!!!!!!!!!!!!!!!!!!!!!!!!")
          print("Please enter a valid book ")
+         print("!!!!!!!!!!!!!!!!!!!!!!!!!")
 
    def donate(self):
       new_book = input("Which book you want to donate : ")
       self.book_list.append(new_book)
+
+      print("\n**********************************")
+      print("Thank You for your kind donation..")
+      print("**********************************")
 
 
 listofbooks = ["a", "b", "c", "d", "e", "f"]
@@ -53,19 +70,13 @@ while True:
       HarryLibrary.show_lent()
    elif action == "b":
       HarryLibrary.lend()
-      print("\n*************************************************************")
-      print("Thank You for lending.. please return the book within a week.")
-      print("*************************************************************")
+
    elif action == "r":
       HarryLibrary.retn()
-      print("\n*************************")
-      print("Thank You for returning..")
-      print("*************************")
+
    elif action == "d":
       HarryLibrary.donate()
-      print("\n**********************************")
-      print("Thank You for your kind donation..")
-      print("**********************************")
+
    else :
       print("Please enter a correct input.")
 
